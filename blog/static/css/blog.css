@@ -1,0 +1,115 @@
+/* dark-theme.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #151617; /* Темный фон */
+    color: #e0e0e0; /* Светлый текст */
+    line-height: 1.6;
+}
+
+
+.logo {
+    display: block; /* Делаем ссылку блочным элементом */
+    margin: 0; /* Убираем отступы */
+}
+
+.logo img {
+    width: 100px; /* Увеличьте ширину */
+    height: auto; /* Сохраняет пропорции */
+}
+
+
+
+button {
+    background-color: #1e90ff; /* Ярко-синий фон для кнопки */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #007acc; /* Темнее при наведении */
+}
+
+a {
+    color: #1e90ff; /* Ярко-синий цвет ссылок */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+h1 {
+    font-weight: normal;
+    border-bottom: 2px solid #444; /* Более темная граница */
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-weight: normal;
+    margin: 30px 0 10px;
+}
+
+#content {
+    float: left;
+    width: 60%;
+    padding: 20px;
+}
+
+#sidebar {
+    float: right;
+    width: 30%;
+    padding: 20px;
+    background: #222; /* Темный фон для боковой панели */
+    border-radius: 5px;
+}
+
+.date {
+    color: #aaa; /* Более светлый цвет для даты */
+    font-family: 'Georgia', serif;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.pagination {
+    margin: 40px 0;
+    font-weight: bold;
+}
+
+.comment {
+    background-color: #2a2a2a; /* Фон для комментариев */
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.comment:nth-child(even) {
+    background: #333; /* Более светлый фон для четных комментариев */
+}
+
+.comment .info {
+    font-weight: bold;
+    font-size: 12px;
+    color: #ccc; /* Светлый цвет информации о пользователе */
+}
+
+/* Добавляем стиль для тегов */
+.tag {
+    display: inline-block; /* Делаем тег блочным элементом */
+    background-color: #1e90ff; /* Ярко-синий фон для тегов */
+    color: white; /* Цвет текста */
+    padding: 5px 10px; /* Отступы вокруг текста */
+    border-radius: 3px; /* Закругленные углы */
+    margin-right: 5px; /* Отступ справа между тегами */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: background-color 0.3s ease; /* Плавный переход цвета фона */
+}
+
+.tag:hover {
+    background-color: #007acc; /* Темнее при наведении */
+}
+
