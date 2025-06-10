@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post
+from .models import Post, Comment
 from django.views.generic import ListView
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404  # новый импорт
@@ -13,6 +13,8 @@ from django.db.models import Count
 from django.views.decorators.http import require_POST
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.contrib.postgres.search import TrigramSimilarity
+from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 
 # Представление для отображения списка постов и инфо
 def post_list(request, tag_slug=None):
@@ -107,6 +109,30 @@ def post_comment(request, post_id):
                   {'post': post,
                    'form': form,
                    'comment': comment})
+
+
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    post = comment.post  # Получаем пост, к которому относится комментарий
+
+    if request.method == 'POST':
+        if request.user.is_superuser:
+            comment.delete()
+            # После удаления комментария мы можем обновить контекст
+            comment = None
+
+
+    return render(request, 'blog/post/delete_comment.html',
+                  {'post': post,
+                   'comment': comment})
+
+
+
+
+
+
+
+
 
 def post_search(request):
     form = SearchForm()

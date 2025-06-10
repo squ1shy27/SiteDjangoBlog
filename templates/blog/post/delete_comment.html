@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Delete a comment{% endblock %}
+
+{% block content %}
+    {% if comment %}
+        <h2>Your comment has not been deleted.</h2>
+    {% else %}
+        <h2>Your comment has been deleted.</h2>
+    {% endif %}
+    <p><a href="{{ post.get_absolute_url }}">Back to the post</a></p>
+{% endblock %}

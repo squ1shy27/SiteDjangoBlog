@@ -11,7 +11,8 @@ path('search/', views.post_search, name='post_search'),
     path('<int:post_id>/share/', views.post_share, name='post_share'),
     path('<int:post_id>/comment/',
          views.post_comment, name='post_comment'),
-path('tag/<slug:tag_slug>/',
+    path('<int:comment_id>/delete-comment/', views.delete_comment, name='delete_comment'),
+    path('tag/<slug:tag_slug>/',
       views.post_list, name='post_list_by_tag'),
 
 ]

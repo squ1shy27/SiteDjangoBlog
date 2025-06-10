@@ -28,6 +28,7 @@
             {{ total_comments }} comment{{ total_comments|pluralize }}
         </h2>
     {% endwith %}
+
     {% for comment in comments %}
         <div class="comment">
             <p class="info">
@@ -35,7 +36,9 @@
                 {{ comment.created }}
             </p>
             {{ comment.body|linebreaks }}
+        {% include "blog/post/includes/delete_button_comment.html" %}
         </div>
+
     {% empty %}
         <p>There are no comments.</p>
     {% endfor %}
