@@ -36,7 +36,9 @@
                 {{ comment.created }}
             </p>
             {{ comment.body|linebreaks }}
-        {% include "blog/post/includes/delete_button_comment.html" %}
+        {%if user.is_superuser%}
+            {% include "blog/post/includes/delete_button_comment.html" %}
+        {%endif%}
         </div>
 
     {% empty %}

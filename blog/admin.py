@@ -19,3 +19,9 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ['name', 'email', 'post', 'created', 'active']
     list_filter = ['active', 'created', 'updated']
     search_fields = ['name', 'email', 'body']
+
+    #TODO PG ADMIN  поставить себя
+
+    # на странице при переходе на отдельную страницу отобразить вывод команды df -h
+    # с помощью питоновского скрипта на странице по кнопке отобразить вывод команды df -h
+    # с помощью питоновского скрипта на странице по кнопке отобразить вывод команды watch df -h импортировать этот скрипт в отдельный файл views использовать os
